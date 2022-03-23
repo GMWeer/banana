@@ -8,7 +8,7 @@ banana = function(data){
     l=sum(is.na(data[o]))
 
     print(o)
-    print('Missing values')
+    print('missing values')
     print(l)
     print('=================')
 
