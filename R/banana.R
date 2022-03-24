@@ -24,5 +24,5 @@ banana = function(data,list1,list2){
   cxc <- ggplot(z, aes(x=a, y=b, fill=factor(b))) + 
     geom_bar(width = 1,stat="identity",colour = "black")
   cxc + coord_polar() + 
-    theme_linedraw() +theme(axis.ticks =element_blank(), axis.text.y =element_blank(), axis.title=element_blank(), axis.text.x=element_text(size = 12,angle = 45)) 
+    theme_linedraw() +theme(axis.ticks =element_blank(), axis.text.y =element_blank(), axis.title=element_blank(), axis.text.x=element_text(size = 8,angle = 45)) 
 }
