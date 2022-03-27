@@ -9,16 +9,17 @@ banana = function(data,list1,list2){
   for ( o in colnames(data)) {
     
     l=sum(is.na(data[o]))
-    #c=length(data[o])
+    c=nrow(data)
     list1=c(list1, o)
     list2=c(list2, l)
   
-    #m = l/c
+    m = l/c
     print(o)
     print('missing values')
     print(l)
-    print('=================')
-    #print(c)
+    print('missing value percentage')
+    print(m)
+    print("--------------------------')
   }
   z <- data.frame( a=list1,  b=list2)
   cxc <- ggplot(z, aes(x=a, y=b, fill=factor(b))) + 
