@@ -11,11 +11,12 @@ banana = function(data,list1,list2){
     
     l=sum(is.na(data[o]))
     c=nrow(data)
+    m = l/c
      col_names=c(col_names, o)
      count=c(count, l)
      precentage=c(precentage, m)
   
-    m = l/c
+    
     #print(o)
     #print('missing values')
     #print(l)
