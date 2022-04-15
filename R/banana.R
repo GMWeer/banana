@@ -4,26 +4,32 @@
 #' @param data name of data frame
 banana = function(data,list1,list2){
   library(ggplot2)
-  list1 <- c()
-  list2 <- c()
+  col_names <- c()
+  precentage <- c()
+  count <- c()
   for ( o in colnames(data)) {
     
     l=sum(is.na(data[o]))
     c=nrow(data)
-    list1=c(list1, o)
-    list2=c(list2, l)
+     col_names=c(col_names, o)
+     count=c(count, l)
+     precentage=c(precentage, m)
   
     m = l/c
-    print(o)
-    print('missing values')
-    print(l)
-    print('missing value percentage')
-    print(m)
-    print("--------------------------')
+    #print(o)
+    #print('missing values')
+    #print(l)
+    #print('missing value percentage')
+    #print(m)
+    #print("--------------------------')
   }
-  z <- data.frame( a=list1,  b=list2)
+  df1 <- data.frame(col_names, count, precentage)
+  #print("Missung data")
+  print(df1)
+  
+  z <- data.frame( a=col_names,  b=precentage)
   cxc <- ggplot(z, aes(x=a, y=b, fill=factor(b))) + 
     geom_bar(width = 1,stat="identity",colour = "black")
   cxc + coord_polar() + 
-    theme_linedraw() +theme(axis.ticks =element_blank(), axis.text.y =element_blank(), axis.title=element_blank(), axis.text.x=element_text(size = 7,angle = 45)) 
+    theme_linedraw() +theme(axis.ticks =element_blank(), axis.text.y =element_blank(), axis.title=element_blank(), axis.text.x=element_text(size = 2,angle = 45)) 
 }
